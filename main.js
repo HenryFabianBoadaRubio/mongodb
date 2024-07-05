@@ -1,8 +1,8 @@
 import { authors } from "./js/model/authors.js";
 import { movis } from "./js/model/movis.js";
 
-let objmovis = new movis();
-// let objauthors = new authors();
+// let objmovis = new movis();
+let objauthors = new authors();
 
 // console.log(await objmovis.getCountDvd());
 
@@ -12,5 +12,14 @@ let objmovis = new movis();
 // console.log(await objauthors.getAuthorsMostAwards());//CONSULTA 5
 // console.log(await objmovis.getAllGenre());//CONSULTA 6
 // console.log(await objmovis.getAuthorId1());//CONSULTA 7
-console.log(await objmovis.getAllValueDvd());//CONSULTA 8
-// console.log(await objmovis.getAllGenre());//CONSULTA 6
+// console.log(await objmovis.getAllValueDvd());//CONSULTA 8
+// console.log(await objmovis.getAllMovisJohn());//CONSULTA 9
+console.log(await objauthors.getAuthorsData());//CONSULTA 10
+// console.log(await objmovis.getAllMovisJohn());//CONSULTA 9
+// console.log(await objmovis.getAllMovisJohn());//CONSULTA 9
+// console.log(await objmovis.getAllMovisJohn());//CONSULTA 9
+// console.log(await objmovis.getAllMovisJohn());//CONSULTA 9
+// console.log(await objmovis.getAllMovisJohn());//CONSULTA 9
+// console.log(await objmovis.getAllMovisJohn());//CONSULTA 9
+// console.log(await objmovis.getAllMovisJohn());//CONSULTA 9
+

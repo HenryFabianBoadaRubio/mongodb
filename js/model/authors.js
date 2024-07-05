@@ -126,4 +126,16 @@ export class authors extends connect{
     await this.conexion.close();
     return data;
 }
+
+  //  10)Encontrar el número total de actores en la base de datos:
+  async getAuthorsData(){
+    const collection = this.db.collection('authors');
+    const data = await collection.aggregate(
+      [{
+        $count: 'id_actores'
+      }]
+    ).toArray();
+    await this.conexion.close();
+    return data;
+}
   }

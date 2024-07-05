@@ -20,6 +20,9 @@ let objmovis = new movis();
 // console.log(await objmovis.getAllMovisAwards());//CONSULTA 14
 // console.log(await objmovis.getAllMovisJohnBluray());//CONSULTA 15
 // console.log(await objmovis.getAllMovisScienceFictionId3());//CONSULTA 16
-console.log(await objmovis.getAllMovisMostCopieDvd());//CONSULTA 17
-// console.log(await objmovis.getAllMovisJohn());//CONSULTA 9
+// console.log(await objmovis.getAllMovisMostCopieDvd());//CONSULTA 17
+// console.log(await objauthors.getAllAuthorsAwards2015());//CONSULTA 18
+// console.log(await objmovis.getAllValueBluray());//CONSULTA 19
+console.log(await objmovis.getAllMovisAuthorId2());//CONSULTA 20
+
 

@@ -154,4 +154,23 @@ export class authors extends connect{
     await this.conexion.close();
     return data;
 }
+
+  //  18)Encontrar todos los actores que han ganado premios después de 2015:
+  async getAllAuthorsAwards2015(){
+    const collection = this.db.collection('authors');
+    const data = await collection.aggregate(
+      [
+        {
+          $unwind: "$awards"
+        },
+        {
+          $match: {
+            "awards.year":{$gt:2015}
+          }
+        }
+      ]
+    ).toArray();
+    await this.conexion.close();
+    return data;
+}
   }

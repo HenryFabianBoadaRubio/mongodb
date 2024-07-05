@@ -297,5 +297,73 @@ export class movis extends connect{
         await this.conexion.close();
         return data;
     }
+
+    // 19)Calcular el valor total de todas las copias de Blu-ray disponibles:
+    async getAllValueBluray(){
+        const collection = this.db.collection('movis');
+        const data = await collection.aggregate(
+            [
+                {
+                  $unwind: "$format"
+                },
+                {
+                  $match: {
+                    "format.name":"Bluray"
+                  }
+                },
+                {
+                  $group: {
+                    _id: null,
+                    totalValorBluray:{
+                      $sum:{
+                        $multiply:[
+                          
+                          "$format.value",
+                          "$format.copies"
+                        ]
+                        
+                      }
+                    }
+                  }
+                },
+                {
+                  $project: {
+                    _id:0
+                  }
+                }
+                
+                
+              ]
+        ).toArray();
+        await this.conexion.close();
+        return data;
+    }
+
+    // 20)Encontrar todas las películas en las que el actor con id 2 haya participado:
+    async getAllMovisAuthorId2(){
+        const collection = this.db.collection('movis');
+        const data = await collection.aggregate(
+            [
+                {
+                  $unwind: "$format"
+                },
+                {
+                  $match: {
+                    "format.name":"dvd"
+                  }
+                },
+                {
+                  $sort: {
+                    "format.copies": -1
+                  }
+                },
+                {
+                  $limit: 1
+                }
+              ]
+        ).toArray();
+        await this.conexion.close();
+        return data;
+    }
 }
  

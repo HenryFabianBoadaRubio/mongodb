@@ -18,8 +18,8 @@ let objmovis = new movis();
 // console.log(await objauthors.getAllAuthorsWithInstragram());//CONSULTA 12
 // console.log(await objmovis.getAllMovisRolMajor());//CONSULTA 13
 // console.log(await objmovis.getAllMovisAwards());//CONSULTA 14
-console.log(await objmovis.getAllMovisJohnBluray());//CONSULTA 15
-// console.log(await objmovis.getAllMovisJohn());//CONSULTA 9
-// console.log(await objmovis.getAllMovisJohn());//CONSULTA 9
+// console.log(await objmovis.getAllMovisJohnBluray());//CONSULTA 15
+// console.log(await objmovis.getAllMovisScienceFictionId3());//CONSULTA 16
+console.log(await objmovis.getAllMovisMostCopieDvd());//CONSULTA 17
 // console.log(await objmovis.getAllMovisJohn());//CONSULTA 9
 

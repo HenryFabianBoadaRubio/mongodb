@@ -80,4 +80,50 @@ export class authors extends connect{
       await this.conexion.close();
       return data;
   }
+
+    // 4) Obtener todos los actores nacidos después de 1980:
+    async getAllAuthor1980(){
+      const collection = this.db.collection('authors');
+      const data = await collection.aggregate(
+        [
+          {
+            $match: {
+              "date_of_birth": {$gt:"1980-12-30"}
+            }
+          }
+        ]
+      ).toArray();
+      await this.conexion.close();
+      return data;
+  }
+   
+  // 5)Encontrar el actor con más premios:
+
+  async getAuthorsMostAwards(){
+    const collection = this.db.collection('authors');
+    const data = await collection.aggregate(
+      [
+        {
+          $unwind: "$awards",
+        },
+        {
+          $group: {
+            _id: "$_id",
+              nombre:{$first:"$full_name"},
+            total: { $sum: 1 },
+          }
+        },
+        {
+          $sort: {
+            total: -1,
+          }
+        },
+        {
+          $limit: 1,
+        }
+      ]
+    ).toArray();
+    await this.conexion.close();
+    return data;
+}
   }

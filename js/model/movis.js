@@ -13,6 +13,7 @@ export class movis extends connect{
         movis.instance = this;
         return this;
     }
+    // 1)Contar el número total de copias de DVD disponibles en todos los registros:
     async getCountDvd(){
         const collection = this.db.collection('movis');
         const data = await collection.find(
@@ -28,7 +29,7 @@ export class movis extends connect{
     }
 
 
-
+    // 6)Listar todos los géneros de películas distintos:
     async getAllGenre(){
         const collection = this.db.collection('movis');
         const data = await collection.aggregate(

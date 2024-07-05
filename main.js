@@ -16,9 +16,9 @@ let objmovis = new movis();
 // console.log(await objmovis.getAllMovisJohn());//CONSULTA 9
 // console.log(await objauthors.getAuthorsData());//CONSULTA 10
 // console.log(await objauthors.getAllAuthorsWithInstragram());//CONSULTA 12
-console.log(await objmovis.getAllMovisRolMajor());//CONSULTA 13
-// console.log(await objmovis.getAllMovisJohn());//CONSULTA 9
-// console.log(await objmovis.getAllMovisJohn());//CONSULTA 9
+// console.log(await objmovis.getAllMovisRolMajor());//CONSULTA 13
+// console.log(await objmovis.getAllMovisAwards());//CONSULTA 14
+console.log(await objmovis.getAllMovisJohnBluray());//CONSULTA 15
 // console.log(await objmovis.getAllMovisJohn());//CONSULTA 9
 // console.log(await objmovis.getAllMovisJohn());//CONSULTA 9
 // console.log(await objmovis.getAllMovisJohn());//CONSULTA 9

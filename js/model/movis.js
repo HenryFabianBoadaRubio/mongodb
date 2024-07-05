@@ -168,5 +168,82 @@ export class movis extends connect{
         await this.conexion.close();
         return data;
     }
+
+    // 14)**Encontrar el número total de premios que se han otorgado en todas las películas:**
+    async getAllMovisAwards(){
+        const collection = this.db.collection('movis');
+        const data = await collection.aggregate(
+            [
+                {
+                  $unwind: "$character"
+                },
+                {
+                  $lookup: {
+                    from: "authors",
+                    localField: "character.id_actor",
+                    foreignField: "id_actor",
+                    as: "character.id_actor"
+                  }
+                },
+                  {
+                  $unwind: "$character.id_actor"
+                },
+                  {
+                  $set: {
+                    totalPremios: {$size:"$character.id_actor.awards"}
+                  }
+                },
+                {
+                  $group: {
+                    _id: "$_id",
+                    nombre:{$first:"$name"},
+                   totalPremios:{$sum:"$totalPremios"}
+                  }
+                },
+                
+              
+              ]
+        ).toArray();
+        await this.conexion.close();
+        return data;
+    }
+
+    // 15)**Encontrar todas las películas en las que John Doe ha actuado y que estén en formato Blu-ray:**
+
+    async getAllMovisJohnBluray(){
+        const collection = this.db.collection('movis');
+        const data = await collection.aggregate(
+            [
+                {
+                      $unwind: "$format"
+                },
+                {
+                  $match: {
+                    "format.name":"Bluray"
+                  }
+                },
+                {
+                  $lookup: {
+                    from: "authors",
+                    localField: "character.id_actor",
+                    foreignField: "id_actor",
+                    as: "actor"
+                  }
+                },
+                {
+                  $unwind: "$actor"
+                },
+                {
+                  $match: {
+                    "actor.full_name":"John Doe"
+                  }
+                }
+                
+                
+              ]
+        ).toArray();
+        await this.conexion.close();
+        return data;
+    }
 }
  

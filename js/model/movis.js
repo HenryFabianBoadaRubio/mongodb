@@ -52,5 +52,75 @@ export class movis extends connect{
         await this.conexion.close();
         return data;
     }
+
+    // 7)Encontrar películas donde el actor con id 1 haya participado:
+    async getAuthorId1(){
+        const collection = this.db.collection('movis');
+        const data = await collection.aggregate(
+            [
+                {
+                  $unwind: "$character"
+                },
+                {
+                  $match: {
+                           "character.id_actor":1
+                  }
+                },
+                {
+                  $project: {
+                    pelicula:"$name"
+                  }
+                }
+              ]
+        ).toArray();
+        await this.conexion.close();
+        return data;
+    }
+
+    // 8)Calcular el valor total de todas las copias de DVD disponibles:
+    async getAllValueDvd(){
+        const collection = this.db.collection('movis');
+        const data = await collection.aggregate(
+            [
+                {
+                  $unwind: "$format"
+                },
+                {
+                  $match: {
+                    "format.name": "dvd"
+                  }
+                },
+                {
+                  $group: {
+                    _id: "$_id",
+                    totalValor: {
+                      $sum: {
+                        $multiply: [
+                          "$format.copies",
+                          "$format.value"
+                        ]
+                      }
+                    }
+                  }
+                },
+                {
+                  $group: {
+                    _id: null,
+                    totalGeneral: {
+                      $sum: "$totalValor"
+                    }
+                  }
+                },
+                {
+                  $project: {
+                    _id: 0,
+                    totalGeneral: 1
+                  }
+                }
+              ]
+        ).toArray();
+        await this.conexion.close();
+        return data;
+    }
 }
  

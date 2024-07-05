@@ -1,6 +1,3 @@
-
-
-import { ObjectId } from "mongodb";
 import { connect } from "../../helpers/db/connect.js"
 
 
@@ -29,4 +26,30 @@ export class movis extends connect{
         await this.conexion.close();
         return {countByMoviDVD: data.length};
     }
+
+
+
+    async getAllGenre(){
+        const collection = this.db.collection('movis');
+        const data = await collection.aggregate(
+            [
+                { $unwind: "$genre" },
+                {
+                  $group: {
+                    _id: null,
+                    generos: { $addToSet: "$genre" }
+                  }
+                },
+                {
+                  $project: {
+                    _id: 0,
+                    generos: 1
+                  }
+                }
+              ]
+        ).toArray();
+        await this.conexion.close();
+        return data;
+    }
 }
+ 

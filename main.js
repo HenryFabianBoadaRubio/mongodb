@@ -1,6 +1,6 @@
-
-
 import { movis } from "./js/model/movis.js";
 
-let objMovis = new movis();
-console.log(await objMovis.getCountDvd());
+let objmovis = new movis();
+// console.log(await objmovis.getCountDvd());
+
+console.log(await objmovis.getAllGenre());//CONSULTA 6

@@ -343,24 +343,13 @@ export class movis extends connect{
     async getAllMovisAuthorId2(){
         const collection = this.db.collection('movis');
         const data = await collection.aggregate(
-            [
-                {
-                  $unwind: "$format"
-                },
-                {
-                  $match: {
-                    "format.name":"dvd"
-                  }
-                },
-                {
-                  $sort: {
-                    "format.copies": -1
-                  }
-                },
-                {
-                  $limit: 1
-                }
-              ]
+          [
+            {
+              $match: {
+                "character.id_actor":2
+              }
+            }
+          ]
         ).toArray();
         await this.conexion.close();
         return data;

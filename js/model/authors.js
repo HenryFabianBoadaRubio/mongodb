@@ -2,20 +2,26 @@ import { connect } from "../../helpers/db/connect.js"
 
 
 export class authors extends connect{
-    static instance;
+    static instanceauthors;
     db
     constructor() {
         super();
         this.db = this.conexion.db(this.getDbName);
-        if (typeof authors.instance === 'object') {
-            return authors.instance;
+        if (typeof authors.instanceauthors === 'object') {
+            return authors.instanceauthors;
         }
-        authors.instance = this;
+        authors.instanceauthors = this;
         return this;
     }
+
+    destructor() {
+      authors.instanceauthors = undefined
+      connect.instanceConnect = undefined
+  }
     // 2)Encontrar todos los actores que han ganado premios Oscar:
     async getAllAuthorsAwards(){
-        const collection = this.db.collection('authors');
+        await this.conexion.connect();
+        const collection = this.db.collection('actor');
         const data = await collection.aggregate(
           [
             {
@@ -42,7 +48,8 @@ export class authors extends connect{
     // 3) Encontrar la cantidad total de premios que ha ganado cada actor:
 
     async getAllAuthorsAwardsCu(){
-      const collection = this.db.collection('authors');
+      await this.conexion.connect();
+      const collection = this.db.collection('actor');
       const data = await collection.aggregate(
         [
           {
@@ -83,7 +90,8 @@ export class authors extends connect{
 
     // 4) Obtener todos los actores nacidos después de 1980:
     async getAllAuthor1980(){
-      const collection = this.db.collection('authors');
+      await this.conexion.connect();
+      const collection = this.db.collection('actor');
       const data = await collection.aggregate(
         [
           {
@@ -100,7 +108,8 @@ export class authors extends connect{
   // 5)Encontrar el actor con más premios:
 
   async getAuthorsMostAwards(){
-    const collection = this.db.collection('authors');
+    await this.conexion.connect();
+    const collection = this.db.collection('actor');
     const data = await collection.aggregate(
       [
         {
@@ -129,7 +138,8 @@ export class authors extends connect{
 
   //  10)Encontrar el número total de actores en la base de datos:
   async getAuthorsData(){
-    const collection = this.db.collection('authors');
+    await this.conexion.connect();
+    const collection = this.db.collection('actor');
     const data = await collection.aggregate(
       [{
         $count: 'id_actores'
@@ -138,10 +148,43 @@ export class authors extends connect{
     await this.conexion.close();
     return data;
 }
+// 11. **Encontrar la edad promedio de los actores en la base de datos:**
+
+    async getAuthorsAverageAge(){
+      await this.conexion.connect();
+      const collection = this.db.collection('actor');
+      const data = await collection.aggregate(
+        [
+          {
+             $addFields: {
+               age: {
+                 $dateDiff: {
+                   startDate: { $dateFromString: {
+                     dateString: '$date_of_birth',
+                     format: '%Y-%m-%d'
+                   }},
+                   endDate: new Date(),
+                   unit: "year"
+                 }
+               }
+             }
+           },
+           {
+             $group: {
+               _id: null,
+               avg_age_actors: {$avg: '$age'}
+             }
+           }
+         ]
+      ).toArray();
+      await this.conexion.close();
+      return data;
+    }
 
   // 12) Encontrar todos los actores que tienen una cuenta de Instagram:
   async getAllAuthorsWithInstragram(){
-    const collection = this.db.collection('authors');
+    await this.conexion.connect();
+    const collection = this.db.collection('actor');
     const data = await collection.aggregate(
       [
         {
@@ -157,7 +200,8 @@ export class authors extends connect{
 
   //  18)Encontrar todos los actores que han ganado premios después de 2015:
   async getAllAuthorsAwards2015(){
-    const collection = this.db.collection('authors');
+    await this.conexion.connect();
+    const collection = this.db.collection('actor');
     const data = await collection.aggregate(
       [
         {

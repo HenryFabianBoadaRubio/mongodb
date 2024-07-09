@@ -2,7 +2,7 @@
 import {MongoClient} from 'mongodb';
 
 export class connect {
-    static instance;
+    static instanceConnect;
     user;
     port;
     cluster;
@@ -12,13 +12,13 @@ export class connect {
     constructor({host, user, pass, port,cluster, dbName}=
         {host: "mongodb://", 
             user: "mongo", 
-            pass: "PNSmQbwecKrbuFTCqXmYoaqicgEZpFeF", 
-            port: 47797, 
+            pass: "MvwjZZrDvXeaTaXAaIVhZLYXQkahfinL", 
+            port: 44048, 
             cluster: "monorail.proxy.rlwy.net", 
-            dbName: "test"}
+            dbName: "blockbuster"}
         ) {
-        if (typeof connect.instance === 'object') {
-            return connect.instance;
+        if (typeof connect.instanceConnect === 'object') {
+            return connect.instanceConnect;
         }
         this.setHost = host;
         this.user = user;
@@ -27,7 +27,7 @@ export class connect {
         this.cluster = cluster;
         this.setDbName = dbName;
         this.#open()
-        connect.instance = this;
+        connect.instanceConnect = this;
         return this;
     }
     set setHost(host){
@@ -45,7 +45,8 @@ export class connect {
     async #open(){
         console.log("Entre");
         // mongodb://mongo:PNSmQbwecKrbuFTCqXmYoaqicgEZpFeF@monorail.proxy.rlwy.net:47797/
-        let url = `${this.#host}${this.user}:${this.#pass}@${this.cluster}:${this.port}`;
+        // let url = `${this.#host}${this.user}:${this.#pass}@${this.cluster}:${this.port}`;
+        let url= `mongodb://mongo:MvwjZZrDvXeaTaXAaIVhZLYXQkahfinL@monorail.proxy.rlwy.net:44048`
         this.conexion = new MongoClient(url);
         await this.conexion.connect();
         console.log("Mensaje de la conexion ");

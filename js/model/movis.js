@@ -2,20 +2,25 @@ import { connect } from "../../helpers/db/connect.js"
 
 
 export class movis extends connect{
-    static instance;
+    static instancemovis;
     db
     constructor() {
         super();
         this.db = this.conexion.db(this.getDbName);
-        if (typeof movis.instance === 'object') {
-            return movis.instance;
+        if (typeof movis.instancemovis === 'object') {
+            return movis.instancemovis;
         }
-        movis.instance = this;
+        movis.instancemovis = this;
         return this;
     }
+    destructor() {
+      movis.instancemovis = undefined
+      connect.instanceConnect = undefined
+  }
     // 1)Contar el número total de copias de DVD disponibles en todos los registros:
     async getCountDvd(){
-        const collection = this.db.collection('movis');
+        await this.conexion.connect();
+        const collection = this.db.collection('movie');
         const data = await collection.find(
             {
                 format: { 
@@ -31,7 +36,8 @@ export class movis extends connect{
 
     // 6)Listar todos los géneros de películas distintos:
     async getAllGenre(){
-        const collection = this.db.collection('movis');
+        await this.conexion.connect();
+        const collection = this.db.collection('movie');
         const data = await collection.aggregate(
             [
                 { $unwind: "$genre" },
@@ -55,7 +61,8 @@ export class movis extends connect{
 
     // 7)Encontrar películas donde el actor con id 1 haya participado:
     async getAuthorId1(){
-        const collection = this.db.collection('movis');
+        await this.conexion.connect();
+        const collection = this.db.collection('movie');
         const data = await collection.aggregate(
             [
                 {
@@ -79,7 +86,8 @@ export class movis extends connect{
 
     // 8)Calcular el valor total de todas las copias de DVD disponibles:
     async getAllValueDvd(){
-        const collection = this.db.collection('movis');
+        await this.conexion.connect();
+        const collection = this.db.collection('movie');
         const data = await collection.aggregate(
             [
                 {
@@ -125,7 +133,8 @@ export class movis extends connect{
 
     // 9)Encontrar todas las películas en las que John Doe ha actuado:
     async getAllMovisJohn(){
-        const collection = this.db.collection('movis');
+        await this.conexion.connect();
+        const collection = this.db.collection('movie');
         const data = await collection.aggregate(
         [
             {
@@ -133,7 +142,7 @@ export class movis extends connect{
             },
             {
                 $lookup: {
-                from: "authors",
+                from: "actor",
                 localField: "character.id_actor",
                 foreignField: "id_actor",
                 as: "actor"
@@ -155,7 +164,8 @@ export class movis extends connect{
 
     // 13)Encontrar todas las películas en las que participan actores principales:
     async getAllMovisRolMajor(){
-        const collection = this.db.collection('movis');
+        await this.conexion.connect();
+        const collection = this.db.collection('movie');
         const data = await collection.aggregate(
             [
                 {
@@ -171,7 +181,8 @@ export class movis extends connect{
 
     // 14)**Encontrar el número total de premios que se han otorgado en todas las películas:**
     async getAllMovisAwards(){
-        const collection = this.db.collection('movis');
+        await this.conexion.connect();
+        const collection = this.db.collection('movie');
         const data = await collection.aggregate(
             [
                 {
@@ -179,7 +190,7 @@ export class movis extends connect{
                 },
                 {
                   $lookup: {
-                    from: "authors",
+                    from: "actor",
                     localField: "character.id_actor",
                     foreignField: "id_actor",
                     as: "character.id_actor"
@@ -211,7 +222,8 @@ export class movis extends connect{
     // 15)**Encontrar todas las películas en las que John Doe ha actuado y que estén en formato Blu-ray:**
 
     async getAllMovisJohnBluray(){
-        const collection = this.db.collection('movis');
+        await this.conexion.connect();
+        const collection = this.db.collection('movie');
         const data = await collection.aggregate(
             [
                 {
@@ -224,7 +236,7 @@ export class movis extends connect{
                 },
                 {
                   $lookup: {
-                    from: "authors",
+                    from: "actor",
                     localField: "character.id_actor",
                     foreignField: "id_actor",
                     as: "actor"
@@ -249,7 +261,8 @@ export class movis extends connect{
     // 16)**Encontrar todas las películas de ciencia ficción que tengan al actor con id 3:**
 
     async getAllMovisScienceFictionId3(){
-        const collection = this.db.collection('movis');
+        await this.conexion.connect();
+        const collection = this.db.collection('movie');
         const data = await collection.aggregate(
             [
                 {
@@ -273,7 +286,8 @@ export class movis extends connect{
 
     // 17)Encontrar la película con más copias disponibles en formato DVD:
     async getAllMovisMostCopieDvd(){
-        const collection = this.db.collection('movis');
+        await this.conexion.connect();
+        const collection = this.db.collection('movie');
         const data = await collection.aggregate(
             [
                 {
@@ -300,7 +314,8 @@ export class movis extends connect{
 
     // 19)Calcular el valor total de todas las copias de Blu-ray disponibles:
     async getAllValueBluray(){
-        const collection = this.db.collection('movis');
+        await this.conexion.connect();
+        const collection = this.db.collection('movie');
         const data = await collection.aggregate(
             [
                 {
@@ -341,26 +356,16 @@ export class movis extends connect{
 
     // 20)Encontrar todas las películas en las que el actor con id 2 haya participado:
     async getAllMovisAuthorId2(){
-        const collection = this.db.collection('movis');
+        await this.conexion.connect();
+        const collection = this.db.collection('movie');
         const data = await collection.aggregate(
-            [
-                {
-                  $unwind: "$format"
-                },
-                {
-                  $match: {
-                    "format.name":"dvd"
-                  }
-                },
-                {
-                  $sort: {
-                    "format.copies": -1
-                  }
-                },
-                {
-                  $limit: 1
-                }
-              ]
+          [
+            {
+              $match: {
+                "character.id_actor":2
+              }
+            }
+          ]
         ).toArray();
         await this.conexion.close();
         return data;

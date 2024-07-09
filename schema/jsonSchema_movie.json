@@ -1,0 +1,89 @@
+{
+    $jsonSchema: {
+      required: [
+        '_id',
+        'name',
+        'genre',
+        'format',
+        'character'
+      ],
+      properties: {
+        _id: {
+          bsonType: 'objectId',
+          description: 'The Id its an obligatory value and its an objectId Type'
+        },
+        name: {
+          bsonType: 'string',
+          description: 'The name its an obligatory value and its a String Type'
+        },
+        character: {
+          bsonType: 'array',
+          items: {
+            bsonType: 'object',
+            required: [
+              'rol',
+              'apodo',
+              'id_actor'
+            ],
+            additionalProperties: false,
+            properties: {
+              rol: {
+                'enum': [
+                  'principal',
+                  'secundario'
+                ]
+              },
+              apodo: {
+                bsonType: 'string'
+              },
+              id_actor: {
+                bsonType: 'int'
+              }
+            }
+          }
+        },
+        genre: {
+          bsonType: 'array',
+          description: 'genre its an obligatory value and its a Strinf Type',
+          items: {
+            'enum': [
+              'Comedia',
+              'Accion',
+              'Ciencia Ficción',
+              'Drama',
+              'Romance',
+              'Crimen',
+              'Aventura',
+              'Fantasia',
+              'Animacion',
+              'Terror',
+              'Historia',
+              'Misterio'
+            ]
+          }
+        },
+        format: {
+          bsonType: 'array',
+          items: {
+            bsonType: 'object',
+            required: [
+              'name',
+              'copies',
+              'value'
+            ],
+            properties: {
+              name: {
+                bsonType: 'string'
+              },
+              copies: {
+                bsonType: 'int'
+              },
+              values: {
+                bsonType: 'double'
+              }
+            }
+          }
+        }
+      }
+    }
+  }

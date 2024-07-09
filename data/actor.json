@@ -1,0 +1,135 @@
+[{
+  "_id": {
+    "$oid": "66782771e2c91fa1ae7aa22d"
+  },
+  "id_actor": 1,
+  "full_name": "John Doe",
+  "date_of_birth": "1975-03-15",
+  "nationality": "United States",
+  "biography": "John Doe is a renowned actor who has starred in numerous blockbuster films.",
+  "awards": [
+    {
+      "name": "Golden Globe Award",
+      "year": 2018,
+      "category": "Best Supporting Actor"
+    }
+  ],
+  "social_media": {
+    "twitter": "https://twitter.com/johndoe",
+    "instagram": "https://instagram.com/johndoe"
+  },
+  "website": "https://www.johndoe.com"
+},
+{
+  "_id": {
+    "$oid": "66782771e2c91fa1ae7aa22e"
+  },
+  "id_actor": 2,
+  "full_name": "Jane Smith",
+  "date_of_birth": "1980-06-25",
+  "nationality": "United Kingdom",
+  "biography": "Jane Smith is a talented actress known for her versatile roles in various genres.",
+  "awards": [
+    {
+      "name": "Oscar Award",
+      "year": 2020,
+      "category": "Best Actress"
+    },
+    {
+      "name": "Golden Globe Award",
+      "year": 2017,
+      "category": "Best Ensemble Cast"
+    }
+  ],
+  "social_media": {
+    "twitter": "https://twitter.com/janesmith",
+    "instagram": "https://instagram.com/janesmith"
+  },
+  "website": "https://www.janesmithofficial.com"
+},
+{
+  "_id": {
+    "$oid": "66782782e2c91fa1ae7aa22f"
+  },
+  "id_actor": 3,
+  "full_name": "Michael Johnson",
+  "date_of_birth": "1982-11-10",
+  "nationality": "Canada",
+  "biography": "Michael Johnson is a versatile actor known for his intense portrayals in action and drama films.",
+  "awards": [
+    {
+      "name": "Oscar Award",
+      "year": 2017,
+      "category": "Best Actor in a Leading Role"
+    },
+    {
+      "name": "Golden Globe Award",
+      "year": 2016,
+      "category": "Best Performance by an Actor in a Motion Picture - Drama"
+    }
+  ],
+  "social_media": {
+    "twitter": "https://twitter.com/michaeljohnson",
+    "instagram": "https://instagram.com/michaeljohnson"
+  },
+  "website": "https://www.michaeljohnsonofficial.com"
+},
+{
+  "_id": {
+    "$oid": "66782782e2c91fa1ae7aa230"
+  },
+  "id_actor": 4,
+  "full_name": "Emily Brown",
+  "date_of_birth": "1985-09-20",
+  "nationality": "Australia",
+  "biography": "Emily Brown is an acclaimed actress known for her compelling performances in thriller and mystery films.",
+  "awards": [
+    {
+      "name": "Oscar Award",
+      "year": 2018,
+      "category": "Best Actress in a Supporting Role"
+    },
+    {
+      "name": "Golden Globe Award",
+      "year": 2017,
+      "category": "Best Performance by an Actress in a Supporting Role"
+    },
+    {
+      "name": "Oscar Award",
+      "year": "2018",
+      "category": "null"
+    }
+  ],
+  "social_media": {
+    "twitter": "https://twitter.com/emilybrown",
+    "instagram": "https://instagram.com/emilybrown"
+  },
+  "website": "https://www.emilybrownofficial.com"
+},
+{
+  "_id": {
+    "$oid": "66782782e2c91fa1ae7aa231"
+  },
+  "id_actor": 5,
+  "full_name": "Daniel Martinez",
+  "date_of_birth": "1987-04-30",
+  "nationality": "Spain",
+  "biography": "Daniel Martinez is a charismatic actor known for his dynamic roles in action and adventure films.",
+  "awards": [
+    {
+      "name": "Oscar Award",
+      "year": 2019,
+      "category": "Best Actor in an Action Film"
+    },
+    {
+      "name": "Golden Globe Award",
+      "year": 2018,
+      "category": "Best Performance by an Actor in an Action Role"
+    }
+  ],
+  "social_media": {
+    "twitter": "https://twitter.com/danielmartinez",
+    "instagram": "https://instagram.com/danielmartinez"
+  },
+  "website": "https://www.danielmartinezofficial.com"
+}]

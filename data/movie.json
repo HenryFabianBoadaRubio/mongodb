@@ -1,0 +1,685 @@
+[{
+  "_id": {
+    "$oid": "66782280e2c91fa1ae7aa208"
+  },
+  "name": "Inception",
+  "character": [
+    {
+      "rol": "principal",
+      "apodo": "Cobb",
+      "id_actor": 1
+    },
+    {
+      "rol": "secundario",
+      "apodo": "Arthur",
+      "id_actor": 2
+    },
+    {
+      "rol": "principal",
+      "apodo": "Miguel",
+      "id_actor": 3
+    }
+  ],
+  "genre": [
+    "Accion",
+    "Ciencia Ficción"
+  ],
+  "format": [
+    {
+      "name": "dvd",
+      "copies": 150,
+      "value": 6.99
+    },
+    {
+      "name": "Bluray",
+      "copies": 250,
+      "value": 12.99
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66782280e2c91fa1ae7aa209"
+  },
+  "name": "The Dark Knight",
+  "character": [
+    {
+      "rol": "principal",
+      "apodo": "Batman",
+      "id_actor": 3
+    },
+    {
+      "rol": "secundario",
+      "apodo": "Joker",
+      "id_actor": 4
+    }
+  ],
+  "genre": [
+    "Accion",
+    "Drama"
+  ],
+  "format": [
+    {
+      "name": "dvd",
+      "copies": 300,
+      "value": 7.99
+    },
+    {
+      "name": "Bluray",
+      "copies": 500,
+      "value": 14.99
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66782280e2c91fa1ae7aa20a"
+  },
+  "name": "Interstellar",
+  "character": [
+    {
+      "rol": "principal",
+      "apodo": "Cooper",
+      "id_actor": 5
+    },
+    {
+      "rol": "secundario",
+      "apodo": "Brand",
+      "id_actor": 6
+    }
+  ],
+  "genre": [
+    "Ciencia Ficción",
+    "Drama"
+  ],
+  "format": [
+    {
+      "name": "dvd",
+      "copies": 180,
+      "value": 8.99
+    },
+    {
+      "name": "Bluray",
+      "copies": 300,
+      "value": 16.99
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66782280e2c91fa1ae7aa20b"
+  },
+  "name": "Avengers: Endgame",
+  "character": [
+    {
+      "rol": "principal",
+      "apodo": "Iron Man",
+      "id_actor": 7
+    },
+    {
+      "rol": "secundario",
+      "apodo": "Captain America",
+      "id_actor": 8
+    }
+  ],
+  "genre": [
+    "Accion",
+    "Ciencia Ficción"
+  ],
+  "format": [
+    {
+      "name": "dvd",
+      "copies": 400,
+      "value": 9.99
+    },
+    {
+      "name": "Bluray",
+      "copies": 600,
+      "value": 19.99
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66782280e2c91fa1ae7aa20c"
+  },
+  "name": "Titanic",
+  "character": [
+    {
+      "rol": "principal",
+      "apodo": "Jack",
+      "id_actor": 9
+    },
+    {
+      "rol": "secundario",
+      "apodo": "Rose",
+      "id_actor": 10
+    }
+  ],
+  "genre": [
+    "Romance",
+    "Drama"
+  ],
+  "format": [
+    {
+      "name": "dvd",
+      "copies": 500,
+      "value": 5.99
+    },
+    {
+      "name": "Bluray",
+      "copies": 700,
+      "value": 11.99
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66782280e2c91fa1ae7aa20d"
+  },
+  "name": "The Matrix",
+  "character": [
+    {
+      "rol": "principal",
+      "apodo": "Neo",
+      "id_actor": 11
+    },
+    {
+      "rol": "secundario",
+      "apodo": "Morpheus",
+      "id_actor": 12
+    }
+  ],
+  "genre": [
+    "Ciencia Ficción",
+    "Accion"
+  ],
+  "format": [
+    {
+      "name": "dvd",
+      "copies": 350,
+      "value": 6.49
+    },
+    {
+      "name": "Bluray",
+      "copies": 450,
+      "value": 13.49
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66782280e2c91fa1ae7aa20e"
+  },
+  "name": "The Shawshank Redemption",
+  "character": [
+    {
+      "rol": "principal",
+      "apodo": "Andy",
+      "id_actor": 13
+    },
+    {
+      "rol": "secundario",
+      "apodo": "Red",
+      "id_actor": 14
+    }
+  ],
+  "genre": [
+    "Drama",
+    "Crimen"
+  ],
+  "format": [
+    {
+      "name": "dvd",
+      "copies": 200,
+      "value": 5.49
+    },
+    {
+      "name": "Bluray",
+      "copies": 300,
+      "value": 10.49
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66782280e2c91fa1ae7aa20f"
+  },
+  "name": "Pulp Fiction",
+  "character": [
+    {
+      "rol": "principal",
+      "apodo": "Vincent",
+      "id_actor": 15
+    },
+    {
+      "rol": "secundario",
+      "apodo": "Jules",
+      "id_actor": 16
+    }
+  ],
+  "genre": [
+    "Crimen",
+    "Drama"
+  ],
+  "format": [
+    {
+      "name": "dvd",
+      "copies": 250,
+      "value": 6.99
+    },
+    {
+      "name": "Bluray",
+      "copies": 350,
+      "value": 12.99
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66782280e2c91fa1ae7aa210"
+  },
+  "name": "Forrest Gump",
+  "character": [
+    {
+      "rol": "principal",
+      "apodo": "Forrest",
+      "id_actor": 17
+    },
+    {
+      "rol": "secundario",
+      "apodo": "Jenny",
+      "id_actor": 18
+    }
+  ],
+  "genre": [
+    "Drama",
+    "Comedia"
+  ],
+  "format": [
+    {
+      "name": "dvd",
+      "copies": 300,
+      "value": 5.99
+    },
+    {
+      "name": "Bluray",
+      "copies": 400,
+      "value": 11.99
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66782280e2c91fa1ae7aa211"
+  },
+  "name": "The Godfather",
+  "character": [
+    {
+      "rol": "principal",
+      "apodo": "Vito",
+      "id_actor": 19
+    },
+    {
+      "rol": "secundario",
+      "apodo": "Michael",
+      "id_actor": 20
+    }
+  ],
+  "genre": [
+    "Crimen",
+    "Drama"
+  ],
+  "format": [
+    {
+      "name": "dvd",
+      "copies": 150,
+      "value": 7.49
+    },
+    {
+      "name": "Bluray",
+      "copies": 250,
+      "value": 14.49
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66782280e2c91fa1ae7aa212"
+  },
+  "name": "Fight Club",
+  "character": [
+    {
+      "rol": "principal",
+      "apodo": "Narrator",
+      "id_actor": 21
+    },
+    {
+      "rol": "secundario",
+      "apodo": "Tyler",
+      "id_actor": 22
+    }
+  ],
+  "genre": [
+    "Drama",
+    "Accion"
+  ],
+  "format": [
+    {
+      "name": "dvd",
+      "copies": 180,
+      "value": 6.99
+    },
+    {
+      "name": "Bluray",
+      "copies": 280,
+      "value": 12.99
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66782280e2c91fa1ae7aa213"
+  },
+  "name": "Gladiator",
+  "character": [
+    {
+      "rol": "principal",
+      "apodo": "Maximus",
+      "id_actor": 23
+    },
+    {
+      "rol": "secundario",
+      "apodo": "Commodus",
+      "id_actor": 24
+    }
+  ],
+  "genre": [
+    "Accion",
+    "Drama"
+  ],
+  "format": [
+    {
+      "name": "dvd",
+      "copies": 200,
+      "value": 7.49
+    },
+    {
+      "name": "Bluray",
+      "copies": 300,
+      "value": 13.49
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66782280e2c91fa1ae7aa214"
+  },
+  "name": "The Lord of the Rings: The Return of the King",
+  "character": [
+    {
+      "rol": "principal",
+      "apodo": "Frodo",
+      "id_actor": 25
+    },
+    {
+      "rol": "secundario",
+      "apodo": "Aragorn",
+      "id_actor": 26
+    }
+  ],
+  "genre": [
+    "Aventura",
+    "Fantasia"
+  ],
+  "format": [
+    {
+      "name": "dvd",
+      "copies": 300,
+      "value": 8.99
+    },
+    {
+      "name": "Bluray",
+      "copies": 400,
+      "value": 16.99
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66782280e2c91fa1ae7aa215"
+  },
+  "name": "Star Wars: Episode IV - A New Hope",
+  "character": [
+    {
+      "rol": "principal",
+      "apodo": "Luke",
+      "id_actor": 27
+    },
+    {
+      "rol": "secundario",
+      "apodo": "Han",
+      "id_actor": 28
+    }
+  ],
+  "genre": [
+    "Aventura",
+    "Ciencia Ficción"
+  ],
+  "format": [
+    {
+      "name": "dvd",
+      "copies": 250,
+      "value": 7.99
+    },
+    {
+      "name": "Bluray",
+      "copies": 350,
+      "value": 14.99
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66782280e2c91fa1ae7aa216"
+  },
+  "name": "Jurassic Park",
+  "character": [
+    {
+      "rol": "principal",
+      "apodo": "Grant",
+      "id_actor": 29
+    },
+    {
+      "rol": "secundario",
+      "apodo": "Malcolm",
+      "id_actor": 30
+    }
+  ],
+  "genre": [
+    "Aventura",
+    "Ciencia Ficción"
+  ],
+  "format": [
+    {
+      "name": "dvd",
+      "copies": 300,
+      "value": 6.99
+    },
+    {
+      "name": "Bluray",
+      "copies": 400,
+      "value": 12.99
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66782403e2c91fa1ae7aa228"
+  },
+  "name": "The Lion King",
+  "character": [
+    {
+      "rol": "principal",
+      "apodo": "Simba",
+      "id_actor": 31
+    },
+    {
+      "rol": "secundario",
+      "apodo": "Mufasa",
+      "id_actor": 32
+    }
+  ],
+  "genre": [
+    "Animacion",
+    "Aventura"
+  ],
+  "format": [
+    {
+      "name": "dvd",
+      "copies": 350,
+      "value": 5.99
+    },
+    {
+      "name": "Bluray",
+      "copies": 450,
+      "value": 11.99
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6678241ee2c91fa1ae7aa229"
+  },
+  "name": "The Silence of the Lambs",
+  "character": [
+    {
+      "rol": "principal",
+      "apodo": "Clarice",
+      "id_actor": 33
+    },
+    {
+      "rol": "secundario",
+      "apodo": "Hannibal",
+      "id_actor": 34
+    }
+  ],
+  "genre": [
+    "Terror",
+    "Crimen"
+  ],
+  "format": [
+    {
+      "name": "dvd",
+      "copies": 150,
+      "value": 7.49
+    },
+    {
+      "name": "Bluray",
+      "copies": 250,
+      "value": 13.49
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6678242fe2c91fa1ae7aa22a"
+  },
+  "name": "Schindler's List",
+  "character": [
+    {
+      "rol": "principal",
+      "apodo": "Oskar",
+      "id_actor": 35
+    },
+    {
+      "rol": "secundario",
+      "apodo": "Amon",
+      "id_actor": 36
+    }
+  ],
+  "genre": [
+    "Drama",
+    "Historia"
+  ],
+  "format": [
+    {
+      "name": "dvd",
+      "copies": 100,
+      "value": 8.99
+    },
+    {
+      "name": "Bluray",
+      "copies": 200,
+      "value": 16.99
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66782440e2c91fa1ae7aa22b"
+  },
+  "name": "The Departed",
+  "character": [
+    {
+      "rol": "principal",
+      "apodo": "Billy",
+      "id_actor": 37
+    },
+    {
+      "rol": "secundario",
+      "apodo": "Colin",
+      "id_actor": 38
+    }
+  ],
+  "genre": [
+    "Crimen",
+    "Drama"
+  ],
+  "format": [
+    {
+      "name": "dvd",
+      "copies": 200,
+      "value": 6.99
+    },
+    {
+      "name": "Bluray",
+      "copies": 300,
+      "value": 12.99
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66782455e2c91fa1ae7aa22c"
+  },
+  "name": "The Prestige",
+  "character": [
+    {
+      "rol": "principal",
+      "apodo": "Borden",
+      "id_actor": 39
+    },
+    {
+      "rol": "secundario",
+      "apodo": "Angier",
+      "id_actor": 40
+    }
+  ],
+  "genre": [
+    "Drama",
+    "Misterio"
+  ],
+  "format": [
+    {
+      "name": "dvd",
+      "copies": 150,
+      "value": 7.49
+    },
+    {
+      "name": "Bluray",
+      "copies": 250,
+      "value": 13.49
+    }
+  ]
+}]

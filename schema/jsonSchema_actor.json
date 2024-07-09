@@ -1,0 +1,83 @@
+{
+    $jsonSchema: {
+      bsonType: 'object',
+      required: [
+        'id_actor',
+        'full_name',
+        'date_of_birth',
+        'nationality',
+        'biography',
+        'awards',
+        'social_media',
+        'website'
+      ],
+      properties: {
+        _id: {
+          bsonType: 'objectId'
+        },
+        id_actor: {
+          bsonType: 'int',
+          description: 'must be an integer and is required'
+        },
+        full_name: {
+          bsonType: 'string',
+          description: 'must be a string and is required'
+        },
+        date_of_birth: {
+          bsonType: 'string',
+          description: 'must be a string representing a date in ISO format and is required'
+        },
+        nationality: {
+          bsonType: 'string',
+          description: 'must be a string and is required'
+        },
+        biography: {
+          bsonType: 'string',
+          description: 'must be a string and is required'
+        },
+        awards: {
+          bsonType: 'array',
+          description: 'must be an array and is required',
+          items: {
+            bsonType: 'object',
+            required: [
+              'name',
+              'year',
+              'category'
+            ],
+            properties: {
+              name: {
+                bsonType: 'string',
+                description: 'must be a string and is required'
+              },
+              year: {
+                bsonType: 'int',
+                description: 'must be an integer and is required'
+              },
+              category: {
+                bsonType: 'string',
+                description: 'must be a string and is required'
+              }
+            }
+          }
+        },
+        social_media: {
+          bsonType: 'object',
+          properties: {
+            twitter: {
+              bsonType: 'string',
+              description: 'must be a string and is required'
+            },
+            instagram: {
+              bsonType: 'string',
+              description: 'must be a string and is required'
+            }
+          }
+        },
+        website: {
+          bsonType: 'string',
+          description: 'must be a string and is required'
+        }
+      }
+    }
+  }
